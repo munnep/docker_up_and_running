@@ -1,6 +1,6 @@
 # Vagrant image Docker
 
-This Vagrant image starts an Ubuntu machine and installs docker 
+This Vagrant image starts an Ubuntu machine and installs docker and netdata
 
 # Prerequisites
 

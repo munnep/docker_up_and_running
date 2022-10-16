@@ -1,0 +1,41 @@
+Vagrant.configure("2") do |config|
+
+    config.vm.define "docker1" do |docker1|
+        docker1.vm.box = "bento/ubuntu-22.04"
+        docker1.vm.hostname = "docker1"
+        docker1.vm.network "private_network", ip: "192.168.56.33"
+
+        docker1.vm.provision "shell", path: "vagrant_scripts/install_monitoring.sh"
+        docker1.vm.provision "shell", path: "vagrant_scripts/install_docker.sh"
+  end
+
+  config.vm.define "docker2" do |docker2|
+    docker2.vm.box = "bento/ubuntu-22.04"
+    docker2.vm.hostname = "docker2"
+    docker2.vm.network "private_network", ip: "192.168.56.34"
+    docker2.vm.provider "virtualbox" do |v|
+        v.memory = 4096
+        v.cpus = 2
+      end
+
+      docker2.vm.provision "shell", path: "vagrant_scripts/install_monitoring.sh"
+      docker2.vm.provision "shell", path: "vagrant_scripts/install_docker.sh"
+  end    
+
+  config.vm.define "docker3" do |docker3|
+    docker3.vm.box = "bento/ubuntu-22.04"
+    docker3.vm.hostname = "docker3"
+    docker3.vm.network "private_network", ip: "192.168.56.34"
+    docker3.vm.provider "virtualbox" do |v|
+        v.memory = 4096
+        v.cpus = 2
+      end
+
+      docker3.vm.provision "shell", path: "vagrant_scripts/install_monitoring.sh"
+      docker3.vm.provision "shell", path: "vagrant_scripts/install_docker.sh"
+  end   
+
+end
+
+
+

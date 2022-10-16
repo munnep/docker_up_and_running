@@ -7,3 +7,6 @@ Under the image directory [here](image/README.md) there is a vagrant image that 
 
 ## Chapter4
 The examples from the book used can be found [here](image/chapter4/)
+
+## Chapter10
+The examples from the book used can be found [here](image/chapter10/). There are also some Vagrant machines to use with the chapters
